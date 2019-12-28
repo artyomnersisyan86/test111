@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="about white--text deep-purple lighten-1"   >
+    <h4 >Գործակալներ</h4>
+
+    <p>hello</p>
   </div>
 </template>
