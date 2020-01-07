@@ -187,12 +187,18 @@ data () {
 <style >
 
 /* hover efect navbar (Հովեր էֆեկտ նավբարի)  */
-.v-btn__content:hover{
+
+button.text-capitalize.theme--dark.v-btn.v-btn--flat.v-btn--text.v-size--default:hover{
+  color: black;
+  font-weight: bold;
+   font-size: 1rem !important;
+}
+/* .v-btn__content:hover{
   color: black;
   font-weight: bold;
    font-size: 1rem !important;
   
-}
+} */
 
 
 /*  (Լիստի մենյուի գրանիցների կարգավորում) */
