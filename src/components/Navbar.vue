@@ -184,15 +184,15 @@ data () {
 }
 </script>
 
-<style >
+<style scoped>
 
 /* hover efect navbar (Հովեր էֆեկտ նավբարի)  */
 
-button.text-capitalize.theme--dark.v-btn.v-btn--flat.v-btn--text.v-size--default:hover{
+/* button.text-capitalize.theme--dark.v-btn.v-btn--flat.v-btn--text.v-size--default:hover{
   color: black;
   font-weight: bold;
-   font-size: 1rem !important;
-}
+    font-size: 258pxpx !important; 
+} */
 /* .v-btn__content:hover{
   color: black;
   font-weight: bold;
@@ -202,10 +202,11 @@ button.text-capitalize.theme--dark.v-btn.v-btn--flat.v-btn--text.v-size--default
 
 
 /*  (Լիստի մենյուի գրանիցների կարգավորում) */
-.v-menu__content{
-  border-radius: 0px 0px 15px  15px !important;
+/* .v-menu__content{
+  border-radius: 3px 3px 15px  15px !important;
+  
 
-}
+} */
 
 
 
@@ -214,29 +215,29 @@ button.text-capitalize.theme--dark.v-btn.v-btn--flat.v-btn--text.v-size--default
   
 }  */
 /* font-size list item text (լիստի տառերի չափը) */
-.v-list-item__title{
+/* .v-list-item__title{
   font-size: 0.875rem !important;
-}
+} */
 /*  hoverEfect of list item (լիստի տեքստի հօվերէֆեկտ) */
-.v-list-item__title.white--text:hover {
-  font-size: 1rem !important;
+ /* .v-list-item__title.white--text{
+  font-size: 13px !important;
    color: black ! important ;
   font-weight: bold;
 
-}
+}  */
 
-.v-list.v-sheet.v-sheet--tile.theme--light{
+/* .v-list.v-sheet.v-sheet--tile.theme--light{
   border-radius: 0px !important;
   border: none;
   padding: 0px
-}
+} */
 
-.v-menu__content--fixed{
+/* .v-menu__content--fixed{
   background-color:#673ab7;
   border-radius: 0px;
   
  
-} 
+}  */
 
 
 
