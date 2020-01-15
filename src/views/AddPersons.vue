@@ -248,26 +248,25 @@
     <v-tabs vertical>
 
 
-      <v-tab>
-        <v-icon left>mdi-account</v-icon>
-        Option 1
+      <v-tab :key="tab1">
+        <v-icon left>ballot</v-icon>Տվյալներ
       </v-tab>
 
 
-      <v-tab>
-        <v-icon left>mdi-lock</v-icon>
-        Option 2
+      <v-tab :key="tab2">
+                  <v-icon left>list_alt</v-icon>անձնական փաստաթղթեր
+        
       </v-tab>
 
 
-      <v-tab>
-        <v-icon left>mdi-access-point</v-icon>
-        Option 3
+      <v-tab :key="tab3">
+                  <v-icon left>phone</v-icon>Հեռախոսահամարներ
+       
       </v-tab>
 
 
 
-      <v-tab-item>
+      <v-tab-item key="tab1">
         
         <v-card flat>
 
@@ -333,7 +332,59 @@
      </div>
 
   </div>
+<div>
+ <v-menu :close-on-content-click="false"  offset-y>
+      <template v-slot:activator="{ on }">
+        <v-btn
+          color="deep-purple lighten-2"
+          dark
+          v-on="on"
+          width="452"
+          
+          class="text-capitalize"
+          small
+        >
+          Русский
+        </v-btn>
+      </template>
 
+<div>
+      <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Имя"
+            outlined
+     ></v-text-field>
+      </v-form>
+    </div>
+    <div>
+      <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Фамиля"
+            outlined
+     ></v-text-field>
+      </v-form>
+    </div>
+    <div>
+      <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Отчество"
+            outlined
+     ></v-text-field>
+      </v-form>
+    </div>
+
+
+ </v-menu>
+
+
+  
+</div>
 
         </v-col>
       </v-row>
@@ -347,40 +398,39 @@
         </v-card>
         
       </v-tab-item>
-      <v-tab-item>
+      <v-tab-item key="tab2">
         <v-card flat>
           <v-card-text>
-            <p>
-              Morbi nec metus. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Nunc sed turpis.
-            </p>
-
-            <p>
-              Suspendisse feugiat. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In hac habitasse platea dictumst. Fusce ac felis sit amet ligula pharetra condimentum.
-            </p>
-
-            <p>
-              Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Nam commodo suscipit quam. In consectetuer turpis ut velit. Sed cursus turpis vitae tortor. Aliquam eu nunc.
-            </p>
-
-            <p>
-              Etiam ut purus mattis mauris sodales aliquam. Ut varius tincidunt libero. Aenean viverra rhoncus pede. Duis leo. Fusce fermentum odio nec arcu.
-            </p>
-
-            <p class="mb-0">
-              Donec venenatis vulputate lorem. Aenean viverra rhoncus pede. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Fusce commodo aliquam arcu. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi.
-            </p>
+            <h1>
+              heloo heloohelooheloohelooheloohelooheloo2 heloo heloohelooheloohelooheloohelooheloo2
+            </h1>
+           
           </v-card-text>
         </v-card>
       </v-tab-item>
-      <v-tab-item>
+      <v-tab-item key="tab3">
         <v-card flat>
           <v-card-text>
             <p>
-              Fusce a quam. Phasellus nec sem in justo pellentesque facilisis. Nam eget dui. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
             </p>
 
             <p class="mb-0">
-              Cras sagittis. Phasellus nec sem in justo pellentesque facilisis. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nam at tortor in tellus interdum sagittis.
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
+tab3
             </p>
           </v-card-text>
         </v-card>
@@ -412,6 +462,7 @@ export default {
       widgets: false,
       tab1: null,
       tab2: null,
+      tab3:null,
       items3: ["Ապահովադրի", "Վարորդի (BM01)"]
     };
   }

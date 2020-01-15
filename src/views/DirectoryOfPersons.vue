@@ -477,15 +477,7 @@ export default {
       getData: [],
       search: "",
       headers: {
-        //     'Access-Control-Allow-Origin': '*',
-        // 'Content-Length': 15664,
-        // 'Content-Type': 'text/plain',
-        //  charset:'utf-8',
-        //  Date: 'Mon, 13 Jan 2020 09:49:30 GMT',
-        // Server: 'WSGIServer/0.2 CPython/3.7.5',
-        // Vary: 'Origin',
-        // 'X-Content-Type-Options': 'nosniff',
-        // 'X-Frame-Options':' DENY'
+        
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "PUT,GET,POST,DELETE,OPTIONS",
         Date: "Mon, 13 Jan 2020 09:19:35 GMT",
@@ -498,8 +490,7 @@ export default {
         "X-Content-Type-Options": "nosniff",
         "Access-Control-Allow-Headers":
           " accept, accept-encoding, authorization, content-type, dnt, origin, user-agent, x-csrftoken, x-requested-with",
-        //'Access-Control-Allow-Methods': 'DELETE, GET, OPTIONS, PATCH, POST, PUT',
-        //'Access-Control-Allow-Origin': '*',
+        
         "Access-Control-Max-Age": 86400,
         "Access-Control-Request-Headers":
           " access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,access-control-max-age,allow,content-type,server,vary,x-content-type-options,x-frame-options",
@@ -582,7 +573,10 @@ export default {
           .then(responce => {
             console.log(responce.data);
             this.getData = responce.data;
-          });
+          }).catch(function (error) {
+            alert('կապի խափանում')
+    console.log(error);
+  });
       } else {
         this.axios
           .get(
@@ -598,7 +592,10 @@ export default {
           .then(responce => {
             console.log(responce.data);
             this.getData = responce.data;
-          });
+          }).catch(function (error) {
+            alert('կապի խափանում')
+    console.log(error);
+  });
       }
 
       //     this.axios.get(this.url.getData, {params: {ISALL:0 } })
