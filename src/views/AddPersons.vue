@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-row justify="center">
-      <v-dialog v-model="dialog" fullscreen transition="dialog-bottom-transition">
+    <v-row >
+      <v-dialog v-model="dialog" fullscreen    transition="dialog-bottom-transition">
         <template v-slot:activator="{ on }">
           <v-btn color="deep-purple" dark v-on="on">Open Dialog</v-btn>
         </template>
@@ -332,24 +332,16 @@
      </div>
 
   </div>
-<div>
- <v-menu :close-on-content-click="false"  offset-y>
-      <template v-slot:activator="{ on }">
-        <v-btn
-          color="deep-purple lighten-2"
-          dark
-          v-on="on"
-          width="452"
-          
-          class="text-capitalize"
-          small
-        >
-          Русский
-        </v-btn>
-      </template>
 
+
+  <!-- Exp Panel for English and Russia -->
 <div>
-      <v-form>
+ 
+<v-expansion-panels :popout="false" :focusable="true"  :hover="true">
+      <v-expansion-panel >
+        <v-expansion-panel-header class="deep-purple lighten-2 white--text" >Русский</v-expansion-panel-header>
+        <v-expansion-panel-content>
+           <v-form>
     <v-text-field
    color="deep-purple"
    
@@ -357,9 +349,7 @@
             outlined
      ></v-text-field>
       </v-form>
-    </div>
-    <div>
-      <v-form>
+  <v-form>
     <v-text-field
    color="deep-purple"
    
@@ -367,24 +357,176 @@
             outlined
      ></v-text-field>
       </v-form>
-    </div>
-    <div>
-      <v-form>
+        <v-form>
     <v-text-field
    color="deep-purple"
    
-            placeholder="Отчество"
+            placeholder="Очество"
+            outlined
+     ></v-text-field>
+      </v-form>
+
+         
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+  
+
+ 
+<v-expansion-panels :popout="false" :focusable="true" :hover="true">
+      <v-expansion-panel >
+        <v-expansion-panel-header class="deep-purple lighten-2 white--text"> English</v-expansion-panel-header>
+        <v-expansion-panel-content>
+           <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Name"
+            outlined
+     ></v-text-field>
+      </v-form>
+  <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Last Name"
+            outlined
+     ></v-text-field>
+      </v-form>
+        <v-form>
+    <v-text-field
+   color="deep-purple"
+   
+            placeholder="Middle Name"
+            outlined
+     ></v-text-field>
+      </v-form>
+
+         
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+  
+</div>
+<!-- ------------------------------- -->
+<!-- gender citizenship place of birth:etc.  սեռ քաղաքացիությունծննդավայր և այլն    -->
+
+
+  <v-container fluid pa-0 >
+    <v-row  class="mt-0">
+      <v-col cols="3" pa-0>
+        <v-subheader>Սեռ</v-subheader>
+      </v-col>
+
+      <v-col cols="9" pa-0>
+        <v-select
+ 
+ color="deep-purple lighten-2"
+
+          :items="genders"
+          label="Սեռ"
+          dense
+          outlined
+           filled
+         height="32"
+            hint="Սեռ"
+        ></v-select>
+      </v-col>
+    </v-row>
+    <v-row class="pa-0">
+      <v-col cols="4" >
+       <v-subheader>Քաղաքացիուտյուն</v-subheader>
+      </v-col>
+
+      <v-col cols="8" pa-0>
+        <v-select
+ 
+ color="deep-purple lighten-2"
+ height="32"
+          :items="sitizenship"
+          label="Քաղաքացիուտյուն"
+          dense
+          outlined
+           filled
+           
+            hint="Քաղաքացիուտյուն"
+        ></v-select>
+      </v-col>
+    </v-row>
+  </v-container>
+  
+<div>
+      <v-form>
+    <v-text-field
+   color="deep-purple"
+   label="Ծննդավայր"
+            placeholder="Ծննդավայր"
             outlined
      ></v-text-field>
       </v-form>
     </div>
-
-
- </v-menu>
-
-
+    <div>
   
-</div>
+          <v-col>
+            <v-menu
+    ref="menu"
+    v-model="menu"
+    :close-on-content-click="false"
+    transition="scale-transition"
+    offset-y
+    full-width
+    min-width="290px"
+  >
+    <template v-slot:activator="{ on }">
+      <v-text-field
+        v-model="date"
+        label="ԾՆՆԴՅԱՆ ԱՄՍԱԹԻՎ"
+        prepend-icon="event"
+        readonly
+        v-on="on"
+      ></v-text-field>
+    </template>
+    <v-date-picker
+      ref="picker"
+      v-model="date"
+      :max="new Date().toISOString().substr(0, 10)"
+      min="1950-01-01"
+      @change="save"
+    ></v-date-picker>
+  </v-menu>
+          </v-col>
+<v-col>
+        <v-menu
+    ref="menu"
+    v-model="menu"
+    :close-on-content-click="false"
+    transition="scale-transition"
+    offset-y
+    full-width
+    min-width="290px"
+  >
+    <template v-slot:activator="{ on }">
+      <v-text-field
+        v-model="date"
+        label="Մահվան ամսաթիվ"
+        prepend-icon="event"
+        readonly
+        v-on="on"
+      ></v-text-field>
+    </template>
+    <v-date-picker
+      ref="picker"
+      v-model="date"
+      :max="new Date().toISOString().substr(0, 10)"
+      min="1950-01-01"
+      @change="save"
+    ></v-date-picker>
+  </v-menu>
+</v-col>
+      
+    </div>
+   
+<!-- ------------------------------- -->
 
         </v-col>
       </v-row>
@@ -463,9 +605,24 @@ export default {
       tab1: null,
       tab2: null,
       tab3:null,
-      items3: ["Ապահովադրի", "Վարորդի (BM01)"]
+      items3: ["Ապահովադրի", "Վարորդի (BM01)"],
+      genders: ['Իգական','Արական'],
+  sitizenship:['Ռեզիդենտ','Ոչ ռեզիդենտ'],
+   date: null,
+      menu: false,
+        
     };
-  }
+  },
+  watch: {
+      menu (val) {
+        val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
+      },
+    },
+    methods: {
+      save (date) {
+        this.$refs.menu.save(date)
+      },
+    },
 };
 </script>
 
@@ -476,5 +633,8 @@ export default {
   padding: 0px;
 }
 
+.v-input__control{
+  height: 1px;
+}
 
 </style>
