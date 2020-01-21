@@ -6,15 +6,15 @@
 
       <v-app-bar flat app class="deep-purple white--text " height="37">
         
- <v-menu offset-y z-index="1" open-on-hover  >
+ <v-menu offset-y z-index="1" open-on-hover   >
       <template v-slot:activator="{ on }">
-        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize" >
+        <v-btn text dark v-on="on" transition="scale-transition"  class="text-capitalize caption " >
         Ապահովագրություն
         </v-btn>
       </template>
       <v-list text class=" deep-purple ">
         <v-list-item  v-for="(item, index) in items" :key="index" >
-          <v-list-item-title class= "white--text">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text  caption ">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -22,13 +22,13 @@
        
  <v-menu offset-y z-index="1" open-on-hover>
       <template v-slot:activator="{ on }">
-        <v-btn  text dark v-on="on" transition="scale-transition"  class="text-capitalize">
+        <v-btn  text dark v-on="on" transition="scale-transition"  class="text-capitalize caption">
           Վերաապահովագրություն
         </v-btn>
       </template>
       <v-list text class=" deep-purple ">
         <v-list-item  v-for="(item, index) in items1" :key="index" >
-          <v-list-item-title class= "white--text 	">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text caption	">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -37,13 +37,13 @@
               
  <v-menu offset-y z-index="1" open-on-hover>
       <template v-slot:activator="{ on }">
-        <v-btn text  dark v-on="on" transition="scale-transition" class="text-capitalize">
+        <v-btn text  dark v-on="on" transition="scale-transition" class="text-capitalize caption">
          Պատահարներ
         </v-btn>
       </template>
       <v-list text class=" deep-purple ">
         <v-list-item  v-for="(item, index) in items2" :key="index" >
-          <v-list-item-title class= "white--text">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text caption">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -52,13 +52,13 @@
               
  <v-menu offset-y z-index="1" open-on-hover>
       <template v-slot:activator="{ on }">
-        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize">
+        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize caption">
           Ցանցային Կառավարում
         </v-btn>
       </template>
       <v-list text class=" deep-purple" >
         <v-list-item  v-for="(item, index) in items3" :key="index" router :to="item.route">
-          <v-list-item-title class= "white--text" >{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text caption" >{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -67,13 +67,13 @@
               
  <v-menu offset-y z-index="1" open-on-hover>
       <template v-slot:activator="{ on }">
-        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize" >
+        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize caption" >
          Հաշվապահություն
         </v-btn>
       </template>
       <v-list text class=" deep-purple ">
         <v-list-item  v-for="(item, index) in items4" :key="index" >
-          <v-list-item-title class= "white--text">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text caption">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -82,13 +82,13 @@
               
  <v-menu offset-y z-index="1" open-on-hover>
       <template v-slot:activator="{ on }">
-        <v-btn text dark v-on="on"   transition="scale-transition"  class="text-capitalize">
+        <v-btn text dark v-on="on"   transition="scale-transition"  class="text-capitalize caption">
           կարգավորումներ
         </v-btn>
       </template>
       <v-list text class=" deep-purple ">
         <v-list-item  v-for="(item, index) in items5" :key="index" >
-          <v-list-item-title class= "white--text">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class= "white--text caption">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
       
@@ -97,13 +97,13 @@
               
  <v-menu offset-y z-index="1" open-on-hover >
       <template v-slot:activator="{ on }">
-        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize">
+        <v-btn text dark v-on="on" transition="scale-transition" class="text-capitalize caption">
         Օգտվող
         </v-btn>
       </template>
       <v-list text   class="  deep-purple ">
         <v-list-item  v-for="item in items6" :key="item.title" router :to="item.route" >
-          <v-list-item-title  class= "white--text  " > 
+          <v-list-item-title  class= "white--text caption " > 
             
             {{ item.title }}</v-list-item-title>
 
